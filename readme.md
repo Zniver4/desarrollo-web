@@ -2,6 +2,7 @@
 
 **_19_**
 
-![Mifoto](/imagenes/yo.jpg)
+![Mifoto](./imagenes/Yo.jpg)
+
 
 
