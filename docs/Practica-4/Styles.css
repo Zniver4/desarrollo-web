@@ -1,0 +1,9 @@
+html {
+    font-family: cursive;
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+body{
+    background-color: black;
+    color: #0eff1e;
+}
