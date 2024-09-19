@@ -60,6 +60,7 @@ function aplicarDescuento(total) {
   }
   return total;
 }
+
 function mostrarTiempoRestante(segundos) {
   let contador = segundos;
 
