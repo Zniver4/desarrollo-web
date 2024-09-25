@@ -6,26 +6,26 @@ const $mensajeCompra = d.querySelector("#mensaje-compra");
 const $carrito = d.querySelector("#carrito");
 
 d.addEventListener("click", function (e) {
-if (!e.target.matches(".producto")) {
+  if (!e.target.matches(".producto")) {
     return false;
-}
+  }
 
   //console.log(e);
-const $producto = e.target;
-let nombre = $producto.getAttribute("data-nombre");
-let precio = parseFloat($producto.getAttribute("data-precio"));
+  const $producto = e.target;
+  let nombre = $producto.getAttribute("data-nombre");
+  let precio = parseFloat($producto.getAttribute("data-precio"));
 
-const $itemCarrito = d.createElement("li");
-$itemCarrito.innerText = `${nombre} - $${precio}`;
+  const $itemCarrito = d.createElement("li");
+  $itemCarrito.innerText = `${nombre} - $${precio}`;
 
-$listaCarrito.appendChild($itemCarrito);
+  $listaCarrito.appendChild($itemCarrito);
 
-let totalActual = parseFloat($totalCarrito.innerText);
-$totalCarrito.innerText = (totalActual + precio).toFixed(2);
+  let totalActual = parseFloat($totalCarrito.innerText);
+  $totalCarrito.innerText = (totalActual + precio).toFixed(2);
 });
 
 $listaCarrito.addEventListener("click", function (e) {
-if (e.target.tagName === "LI") {
+  if (e.target.tagName === "LI") {
     const $item = e.target;
     $item.remove();
 
@@ -34,5 +34,14 @@ if (e.target.tagName === "LI") {
 
     let totalActual = parseFloat($totalCarrito.innerText);
     $totalCarrito.innerText = (totalActual - precio).toFixed(2);
-}
+  }
+});
+
+$btnCompra.addEventListener("click", function (e) {
+  console.log($listaCarrito.children);
+  if ($listaCarrito.children.length > 0) {
+    $mensajeCompra.classList.remove("hidden");
+  } else {
+    alert("El carrito está vacío, no se puede realizar la compra.");
+  }
 });
