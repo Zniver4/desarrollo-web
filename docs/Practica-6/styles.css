@@ -4,6 +4,8 @@
 
 body {
     font-family: system-ui, sans-serif;
+    background-color: black;
+    color: greenyellow;
 }
 
 .producto {
