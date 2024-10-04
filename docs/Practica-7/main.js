@@ -22,8 +22,12 @@ function validateForm(e) {
   let isValid = true;
 
   //Validar Nombre
+  let namePattern = /^[a-zA-Z\s]+$/;
   if ($nameInput.value.trim() === "") {
     $nameError.innerText = "El nombre es obligatorio";
+    isValid = false;
+  } else if (!namePattern.test($nameInput.value.trim())) {
+    $nameError.innerText = "El nombre solo puede contener letras y espacios";
     isValid = false;
   }
 
@@ -38,11 +42,12 @@ function validateForm(e) {
   }
 
   //Validar Password
+  let passwordPattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W_]).{8,}$/;
   if ($passwordInput.value.trim() === "") {
-    $passwordError.innerText = "La contraseña es obligatorio";
+    $passwordError.innerText = "La contraseña es obligatoria";
     isValid = false;
-  } else if ($passwordInput.value.trim().length < 8) {
-    $passwordError.innerText = "La contraseña debe tener al menos 8 caracteres";
+  } else if (!passwordPattern.test($passwordInput.value.trim())) {
+    $passwordError.innerText = "La contraseña debe tener al menos 8 caracteres, incluyendo un número, una letra mayúscula, una letra minúscula y un carácter especial";
     isValid = false;
   }
 
@@ -57,10 +62,15 @@ function validateForm(e) {
     e.preventDefault();
   } else {
     e.preventDefault();
-    $successMessage.innerText = "Formulario enviado exitosamente.";
-    $form.reset();
-    // Aquí puedes manejar el envío real de datos a un servidor, por ejemplo, usando fetch.
+    // Simular loader de 5 segundos
+    $successMessage.innerText = "Enviando formulario...";
+    setTimeout(() => {
+      $successMessage.innerText = "Formulario enviado exitosamente.";
+      $form.reset();
+      // Aquí puedes manejar el envío real de datos a un servidor, por ejemplo, usando fetch.
+    }, 5000);
   }
 }
 
 $form.addEventListener("submit", validateForm);
+

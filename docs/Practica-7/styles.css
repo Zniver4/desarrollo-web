@@ -34,12 +34,13 @@
   }
   
   .error {
-    color: red;
+    color:coral;
     font-size: 85%;
   }
   
   .success {
-    color: green;
+    color: greenyellow;
     font-size: 1rem;
     text-align: center;
   }
+
