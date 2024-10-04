@@ -11,3 +11,5 @@
 [Practica 5](https://zniver4.github.io/desarrollo-web/Practica-5/Index.html)
 
 [Practica 6](https://zniver4.github.io/desarrollo-web/Practica-6/index.html)
+
+[Practica 7](https://zniver4.github.io/desarrollo-web/Practica-7/index.html)
