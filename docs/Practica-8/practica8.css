@@ -1,0 +1,114 @@
+html {   
+    font-family: "Raleway", sans-serif;
+    background-color: #033a08;
+    margin: 10px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    border-radius: 20px;
+    background-color: #2f9047 !important;
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+}
+.card-img-top{
+    margin: 20px;
+}
+.box {
+    border-radius: 15px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+    padding: 5px 10px;
+    margin: 20px;
+    background-color: #ffaa0d;
+}
+.botones {
+    margin-top: 10px;
+}
+
+.botones button {
+    margin-right: 5px;
+}
+.txtJustified {
+    text-align: justify;
+}
+
+.txtCenter {
+    text-align: center;
+}
+
+.img-fluid {
+    border-radius: 20px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+    width: 50%;
+    height: auto;
+    max-width: 100%;
+}
+
+.size17px {
+    font-size: 17px;
+}
+
+.producto {
+    border: 1px solid #f30000;
+    padding: 10px;
+    margin: 5px;
+}
+.hidden {
+    display: none;
+}
+.show {
+    animation: fadeIn 0.5s; /* Asegúrate de tener una animación definida */
+}
+
+.hide {
+    animation: fadeOut 0.5s; /* Asegúrate de tener una animación definida */
+}
+
+/*CARRITO*/
+/* Loader */
+.loader {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.75);
+    color: white;
+    padding: 1em 2em;
+    border-radius: 8px;
+    font-size: 1.2em;
+    z-index: 1000;
+    text-align: center;
+}
+
+/* Spinner */
+.spinner-border {
+    margin-bottom: 1em;
+}
+
+/* Mensaje de éxito */
+.mensaje-exito {
+    position: fixed;
+    top: -100px; /* Fuera de la pantalla al inicio */
+    left: 0;
+    width: 100%;
+    background-color: #28a745;
+    color: white;
+    text-align: center;
+    padding: 1em;
+    font-size: 1.5em;
+    z-index: 1000;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Animación de entrada y salida */
+.mensaje-exito.show {
+    transform: translateY(100px); /* Baja el mensaje a la vista */
+}
+
+.mensaje-exito.hide {
+    transform: translateY(-100px); /* Lo sube al desaparecer */
+}
